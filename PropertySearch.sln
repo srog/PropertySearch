@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertySearch", "PropertySearch.csproj", "{F3792871-8E62-4D33-B980-2F898CF62A0C}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PropertyDB", "..\PropertyDB\PropertyDB.sqlproj", "{23FCC40C-21D5-424A-84C8-C10CB0347A3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3792871-8E62-4D33-B980-2F898CF62A0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3792871-8E62-4D33-B980-2F898CF62A0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3792871-8E62-4D33-B980-2F898CF62A0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3792871-8E62-4D33-B980-2F898CF62A0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23FCC40C-21D5-424A-84C8-C10CB0347A3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23FCC40C-21D5-424A-84C8-C10CB0347A3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23FCC40C-21D5-424A-84C8-C10CB0347A3E}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{23FCC40C-21D5-424A-84C8-C10CB0347A3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23FCC40C-21D5-424A-84C8-C10CB0347A3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23FCC40C-21D5-424A-84C8-C10CB0347A3E}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D62C4035-9B50-423D-AE21-9630FAF51752}
+	EndGlobalSection
+EndGlobal

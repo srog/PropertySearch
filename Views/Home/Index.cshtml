@@ -1,0 +1,117 @@
+﻿@model PropertySearchResults
+@{
+  ViewData["Title"] = "Property Search";
+}
+
+
+<script type="text/javascript">
+  function geturl(postcode)
+  {    
+    if( postcode != "" )
+    {
+      document.getElementById( 'mapframe' ).src = "https://maps.google.com/maps?q=" + postcode + "&output=embed";
+    }
+    else
+    {
+      document.getElementById( 'mapframe' ).src = "";
+    }
+  }
+
+  function toggleMap()
+  {
+    var x = document.getElementById( "myDiv" );
+    if( x.style.display === "none" )
+    {
+      x.style.display = "block";
+    } else
+    {
+      x.style.display = "none";
+    }
+    geturl(document.getElementById("postcodeText").value);
+  }
+
+  function clearForm()
+  {
+    document.getElementById( "postcodeText" ).value = "";    
+  }
+  
+</script>
+
+<div class="text-center">
+  <h4>Please Enter a Postcode</h4>
+
+
+  <form asp-controller="Home" asp-action="Search">
+
+    Title: <input type="text" id="postcodeText" name="SearchPostcode" value="@(ViewBag.postcode)" />
+    <input type="submit" value="Search" />
+    <input type="submit" value="Clear" onclick="clearForm();" />
+
+  </form>
+
+</div>
+<br />
+
+<div>
+  @if( ViewBag.postcode != "" )
+  {
+  <label>Properties</label>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            @Html.DisplayNameFor( model => model.SearchResults.First().AddressLine1 )
+          </th>
+          <th>
+            @Html.DisplayNameFor( model => model.SearchResults.First().AddressLine2 )
+
+          </th>
+          <th>
+            @Html.DisplayNameFor( model => model.SearchResults.First().Postcode )
+
+          </th>
+          <th>
+            @Html.DisplayNameFor( model => model.SearchResults.First().LastSoldPriceDisplay )
+          </th>
+          <th>
+            @Html.DisplayNameFor( model => model.SearchResults.First().LastSoldDateDisplay )
+          </th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach( var property in Model.SearchResults )
+        {
+        <tr>
+          <td>
+            @Html.DisplayFor( modelItem => property.AddressLine1 )
+          </td>
+          <td>
+            @Html.DisplayFor( modelItem => property.AddressLine2 )
+          </td>
+          <td>
+            @Html.DisplayFor( modelItem => property.Postcode )
+          </td>
+          <td>
+            @Html.DisplayFor( modelItem => property.LastSoldPriceDisplay )
+          </td>
+          <td>
+            @Html.DisplayFor( modelItem => property.LastSoldDateDisplay )
+          </td>
+
+        </tr>
+        }
+      </tbody>
+    </table>
+
+  }
+</div>
+<input type="button" value="Click to Display Map" onclick="toggleMap();" />
+
+<div>
+  <div id="myDiv" style="width:100%;height:400px;display:none">
+
+    <iframe id="mapframe"  width=500 height=200></iframe>
+  </div>
+</div>
+
